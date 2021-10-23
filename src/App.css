@@ -1,38 +1,138 @@
+body {
+    background-color: #3587A4;
+}
+
 .App {
-  text-align: center;
+    text-align: center;
+    overflow: auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header {
+    background-color: #c1dff0;
+    border-top: 0;
+    border-left: 2px solid #3587A4;
+    border-right: 2px solid #3587A4;
+    border-bottom: 1px solid #3587A4;
+    margin: auto; /*dodatkowy obszar który jest dodawany na zewnątrz granicy/border line */
+    width: 60vw; /*60 % view width szerokości obszaru widzianego*/
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header-app-name {
+    vertical-align: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.header-icon {
+    height: 48px;
+
+    /*to dodatkowy obszar dodany 'wenątrz obiektu' / wewnątrz border line */
+    /*padding: 0;*/
+    /*padding: 2px; !*wszędzie taki sam*!*/
+    /*padding: 10px 2px; !* padding top/bottom left/right*!*/
+    padding: 4px 6px 2px 6px; /* padding top/right/bottom/left */
+
+    /*poza tym możecie użyć poszzególnych kierunków:*/
+    /*padding-top: 4px;*/
+    /*padding-right: 6px;*/
+    /*padding-bottom: 2px;*/
+    /*padding-left: 6px;*/
+
+    display: flex;
 }
 
-.App-link {
-  color: #61dafb;
+.content {
+    background-color: #88ccf1;
+    margin: 5px auto;
+    width: 60vw;
+
+    border: 1px solid black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.student-table-container {
+    margin: 5px;
+    border: 1px solid #A5D6F1;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.student-table-header {
+    margin: 5px 0;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    display: flex;
+}
+
+.student-table {
+
+}
+
+/*#################### TUTAJ PRACOWALISMY NA TABELI <table> ############################# */
+table {
+    border-top: 1px solid #2D848A;
+    width: 100%;
+}
+
+.table-header-row {
+    background-color: #2D848A;
+}
+
+thead {
+    padding: 0 2px;
+}
+
+tr {
+    background-color: #C1DFF0;
+    transition: background-color 1s;
+}
+
+tr:hover {
+    background-color: #a6c1d2;
+    font-weight: bold;
+}
+
+th {
+    border: 1px solid red;
+}
+
+td {
+    text-align: left;
+    border: 1px solid yellow;
+}
+
+/*#################### TUTAJ PRACOWALISMY NA TABELI <div> ############################# */
+.table-thead{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid red;
+}
+
+.table-th{
+    display: flex;
+    flex: auto; /* mechanizm flex, grow proportion 1 */
+    font-weight:bold;
+    border: 1px solid red;
+    background-color: #C1DFF0;
+}
+
+.table-row{
+    display: flex;
+    flex-direction: row;
+    transition: background-color 1s;
+    background-color: #C1DFF0;
+}
+
+.table-row:hover {
+    background-color: #a6c1d2;
+    font-weight: bold;
+}
+
+.table-td {
+    text-align: left;
+    border: 1px solid yellow;
 }
