@@ -1,6 +1,17 @@
 import './StudentTable.css'
 
-const StudentTableComponent = () => {
+const StudentTableComponent = (props) => {
+
+    const createStudentTableRow = (student) => {
+        return (<tr key={student.name + ' ' + student.surname}>
+            <td>{student.id}</td>
+            <td>{student.name}</td>
+            <td>{student.surname}</td>
+            <td>{student.birthDate}</td>
+            <td>{student.index}</td>
+            <td>{student.faculty}</td>
+        </tr>)
+    }
 
     return (<div className="student-table-container">
         <div className="student-table-header">
@@ -19,22 +30,7 @@ const StudentTableComponent = () => {
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Paweł</td>
-                    <td>Gaweł</td>
-                    <td>2021-10-10</td>
-                    <td>123666</td>
-                    <td>INFORMATYKA</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Jan</td>
-                    <td>Kowalski</td>
-                    <td>2011-03-11</td>
-                    <td>123665</td>
-                    <td>HYDRAULIKA</td>
-                </tr>
+                { props.students.map(createStudentTableRow) }
                 </tbody>
             </table>
         </div>

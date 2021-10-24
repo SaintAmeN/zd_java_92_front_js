@@ -1,6 +1,25 @@
 import './StudentTable.css'
 
-const StudentTableDivComponent = () => {
+const StudentTableDivComponent = (props) => {
+
+    const createStudentTableDivRow = (student) => {
+        return (<div key={student.name + ' ' + student.surname}
+                     className="table-row">
+            <div className="table-td col-md-1">{student.id}</div>
+            <div className="table-td col-md-2">{student.name}</div>
+            <div className="table-td col-md-2">{student.surname}</div>
+            <div className="table-td col-md-3">{student.birthDate}</div>
+            <div className="table-td col-md-2">{student.index}</div>
+            <div className="table-td col-md-2">{student.faculty}</div>
+        </div>)
+    }
+
+    const emptyRow = () => {
+        return (
+            <div className="table-row">
+                <div className="table-td col-md-12 centered-text">Table is empty</div>
+            </div>)
+    }
 
     return (<div className="student-table-container">
         <div className="student-table-header">
@@ -17,22 +36,9 @@ const StudentTableDivComponent = () => {
                     <div className="table-th col-md-2">Kierunek</div>
                 </div>
                 <div className="table-tbody">
-                    <div className="table-row">
-                        <div className="table-td col-md-1">1</div>
-                        <div className="table-td col-md-2">Paweł</div>
-                        <div className="table-td col-md-2">Gaweł</div>
-                        <div className="table-td col-md-3">2021-10-10</div>
-                        <div className="table-td col-md-2">123666</div>
-                        <div className="table-td col-md-2">INFORMATYKA</div>
-                    </div>
-                    <div className="table-row">
-                        <div className="table-td col-md-1">2</div>
-                        <div className="table-td col-md-2">Jan</div>
-                        <div className="table-td col-md-2">Kowalski</div>
-                        <div className="table-td col-md-3">2011-03-11</div>
-                        <div className="table-td col-md-2">123665</div>
-                        <div className="table-td col-md-2">HYDRAULIKA</div>
-                    </div>
+                    {
+                        props.students.length > 0 ? props.students.map(createStudentTableDivRow) : emptyRow()
+                    }
                 </div>
             </div>
         </div>

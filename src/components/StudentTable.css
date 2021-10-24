@@ -66,7 +66,7 @@ thead {
 
 tr {
     background-color: #C1DFF0;
-    transition: background-color 1s;
+    /*transition: background-color 1s;*/
 }
 
 tr:hover {
@@ -81,4 +81,8 @@ th {
 td {
     text-align: left;
     border: 1px solid yellow;
+}
+
+.centered-text{
+    text-align: center;
 }
