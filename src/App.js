@@ -4,6 +4,7 @@ import './App.css';
 import StudentTableComponent from "./components/StudentTableComponent";
 import StudentTableDivComponent from "./components/StudentTableDivComponent";
 import MultiplicationTable from "./components/MultiplicationTable";
+import StudentForm from "./components/StudentForm";
 
 // # Rodzaje wartości/deklaracji zmiennych/stalych
 // stała 'liczba' = 5
@@ -27,6 +28,9 @@ function App() {
             <div className="content">
                 <StudentTableComponent/> {/*tag ktory nie ma tresci i jest zamkniety*/}
                 <StudentTableDivComponent/>
+
+                <hr/>
+                <StudentForm/>
 
                 <hr/>
                 <MultiplicationTable/>
