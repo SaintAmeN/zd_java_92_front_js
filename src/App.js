@@ -1,6 +1,9 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css';
 
+import StudentTableComponent from "./components/StudentTableComponent";
+import StudentTableDivComponent from "./components/StudentTableDivComponent";
+
 // # Rodzaje wartości/deklaracji zmiennych/stalych
 // stała 'liczba' = 5
 const liczba = 5;
@@ -67,78 +70,9 @@ function App() {
             <div className="content-introduction"></div>
             {/* TODO: na razie pusty, później coś dodać*/}
             <div className="content">
-                <div className="student-table-container">
-                    <div className="student-table-header">
-                        Tabela studentów
-                    </div>
-                    <div className="student-table">
-                        <table>
-                            <thead>
-                            <tr>
-                                <th>Id</th>
-                                <th>Imie</th>
-                                <th>Nazwisko</th>
-                                <th>Data urodzenia</th>
-                                <th>Numer indeksu</th>
-                                <th>Kierunek</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>Paweł</td>
-                                <td>Gaweł</td>
-                                <td>2021-10-10</td>
-                                <td>123666</td>
-                                <td>INFORMATYKA</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Jan</td>
-                                <td>Kowalski</td>
-                                <td>2011-03-11</td>
-                                <td>123665</td>
-                                <td>HYDRAULIKA</td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div className="student-table-container">
-                    <div className="student-table-header">
-                        Tabela studentów bez tabeli
-                    </div>
-                    <div className="student-table">
-                        <div className="table-div">
-                            <div className="table-thead">
-                                <div className="table-th col-1">Id</div>
-                                <div className="table-th col-md-2">Imie</div>
-                                <div className="table-th col-md-2">Nazwisko</div>
-                                <div className="table-th col-md-3">Data urodzenia</div>
-                                <div className="table-th col-md-2">Numer indeksu</div>
-                                <div className="table-th col-md-2">Kierunek</div>
-                            </div>
-                            <div className="table-tbody">
-                                <div className="table-row">
-                                    <div className="table-td col-md-1">1</div>
-                                    <div className="table-td col-md-2">Paweł</div>
-                                    <div className="table-td col-md-2">Gaweł</div>
-                                    <div className="table-td col-md-3">2021-10-10</div>
-                                    <div className="table-td col-md-2">123666</div>
-                                    <div className="table-td col-md-2">INFORMATYKA</div>
-                                </div>
-                                <div className="table-row">
-                                    <div className="table-td col-md-1">2</div>
-                                    <div className="table-td col-md-2">Jan</div>
-                                    <div className="table-td col-md-2">Kowalski</div>
-                                    <div className="table-td col-md-3">2011-03-11</div>
-                                    <div className="table-td col-md-2">123665</div>
-                                    <div className="table-td col-md-2">HYDRAULIKA</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {/*<StudentTableComponent></StudentTableComponent> /!*otwieramy i zamykamy*!/*/}
+                <StudentTableComponent/>                        {/*tag ktory nie ma tresci i jest zamkniety*/}
+                <StudentTableDivComponent/>
 
                 <hr/>
                 <div className="multiplication-table">
