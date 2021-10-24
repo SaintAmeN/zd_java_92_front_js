@@ -8,13 +8,14 @@ const StudentComponent = () => {
     const [studentList, setStudentList] = useState([]);
 
     // funkcja której można użyć żeby dodać nowego studenta
-    const addStudent = (name, surname, birthDate, index) => {
+    const addStudent = (name, surname, birthDate, index, faculty) => {
         const student = {
             'id': bumpCounter(),
             'name': name,
             'surname': surname,
             'birthDate': birthDate,
-            'index': index
+            'index': index,
+            'faculty': faculty
         }
 
         // [] - deklaracja listy/slice
@@ -26,6 +27,18 @@ const StudentComponent = () => {
         setStudentList(studentListCopy);
 
         console.log('Dodano studenta: ' + student);
+    }
+
+    const removeStudent = (studentId) => {
+        let studentListCopy = [...studentList]; // stworzenie kopi listy
+        for (let i = 0; i < studentListCopy.length; i++) {
+            if (studentListCopy[i].id === studentId){
+                studentListCopy.splice(i, 1); // splice usuwa z pozycji o numerze 'i' ilość elementów: 1
+                break;
+            }
+        }
+
+        setStudentList(studentListCopy);
     }
 
     const bumpCounter = () => {
@@ -56,7 +69,7 @@ const StudentComponent = () => {
 
     return (<>
         <StudentTableComponent students={studentList}/> {/*tag ktory nie ma tresci i jest zamkniety*/}
-        <StudentTableDivComponent students={studentList}/>
+        <StudentTableDivComponent students={studentList} removeStudentFunction={removeStudent}/>
 
         <hr/>
         <StudentForm addStudentFunction={addStudent}/>

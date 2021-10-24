@@ -1,4 +1,5 @@
 import './StudentTable.css'
+import {Button} from "react-bootstrap";
 
 const StudentTableDivComponent = (props) => {
 
@@ -8,9 +9,15 @@ const StudentTableDivComponent = (props) => {
             <div className="table-td col-md-1">{student.id}</div>
             <div className="table-td col-md-2">{student.name}</div>
             <div className="table-td col-md-2">{student.surname}</div>
-            <div className="table-td col-md-3">{student.birthDate}</div>
+            <div className="table-td col-md-2">{student.birthDate}</div>
             <div className="table-td col-md-2">{student.index}</div>
             <div className="table-td col-md-2">{student.faculty}</div>
+            <div className="table-td col-md-1">
+                <Button onClick={()=>{
+                    console.log('Removing: ' + student.id);
+                    props.removeStudentFunction(student.id);
+                }}>Remove</Button>
+            </div>
         </div>)
     }
 
@@ -31,9 +38,10 @@ const StudentTableDivComponent = (props) => {
                     <div className="table-th col-1">Id</div>
                     <div className="table-th col-md-2">Imie</div>
                     <div className="table-th col-md-2">Nazwisko</div>
-                    <div className="table-th col-md-3">Data urodzenia</div>
+                    <div className="table-th col-md-2">Data urodzenia</div>
                     <div className="table-th col-md-2">Numer indeksu</div>
                     <div className="table-th col-md-2">Kierunek</div>
+                    <div className="table-th col-md-1"/>
                 </div>
                 <div className="table-tbody">
                     {
